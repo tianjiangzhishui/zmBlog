@@ -1,0 +1,23 @@
+<div class="article col-md-8">
+    <div class="panel panel-default" ng-repeat="value in seoOptimizeList">
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a ng-href="{{value.seoOpt_url}}">
+                        <img class="media-object" ng-src="images/studiness/seo/{{value.seoOpt_img}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <p class="media-heading"><a ng-href="{{value.seoOpt_url}}">{{value.seoOpt_title}}</a></p>
+                    <div class="author">
+                        <img ng-src="images/{{value.seoOpt_author_img}}" class="img-circle">
+                        <span>{{value.seoOpt_author_name}}</span>
+                        <span>{{'发布时间:'+value.seoOpt_publictime}}</span>
+                        <span>{{'分类:'+value.seoOpt_sort}}</span>
+                    </div>
+                    <p class="mainPart">{{value.seoOpt_descript}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

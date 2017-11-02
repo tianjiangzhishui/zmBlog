@@ -1,0 +1,23 @@
+<div class="article col-md-8">
+    <div class="panel panel-default" ng-repeat="value in coderList">
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a ng-href="{{value.coder_url}}">
+                        <img class="media-object" ng-src="images/webTemplate/{{value.coder_img}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <p class="media-heading"><a ng-href="{{value.coder_url}}">{{value.coder_title}}</a></p>
+                    <div class="author">
+                        <img ng-src="images/{{value.coder_author_img}}" class="img-circle">
+                        <span>{{value.coder_author_name}}</span>
+                        <span>{{'发布时间:'+value.coder_publictime}}</span>
+                        <span>{{'分类:'+value.coder_sort}}</span>
+                    </div>
+                    <p class="mainPart">{{value.coder_descript}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

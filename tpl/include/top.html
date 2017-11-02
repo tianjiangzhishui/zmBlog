@@ -1,0 +1,25 @@
+<!--头部-->
+<header id="header" ng-controller="headerCtrl">
+    <div>
+        <img src="images/zmBlog.png">
+        <div class="animate">
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;从不羡慕别人的优秀，因为相信自己也可以优秀。</p>
+            <p>闲下来时看看书，书本里的故事，总有你学到的人生。</p>
+            <p>---By:<span>张敏</span></p>
+        </div>
+        <!--<img src="images/logo-pic-bg.jpg">-->
+    </div>
+    <p ng-show="nickname">{{'你好！'+nickname}}</p>
+</header>
+<!--导航-->
+<nav id="nav">
+    <ul class="nav nav-pills nav-justified">
+        <li><a href="#/main">首页</a></li>
+        <li><a href="#/webTemplate">网站模版</a></li>
+        <li><a href="#/flash">视频教程</a></li>
+        <li><a href="#/study">学无止境</a></li>
+        <li><a ng-click="toDiary()">个人日记</a></li>
+        <li><a href="#aboutMe">关于张敏</a></li>
+        <li><a href="#message">留言板</a></li>
+    </ul>
+</nav>

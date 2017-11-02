@@ -1,0 +1,23 @@
+<div class="article col-md-8">
+    <div class="panel panel-default" ng-repeat="value in webFrontEndBasisList">
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a ng-href="{{value.wfeBss_url}}">
+                        <img class="media-object" ng-src="images/studiness/webFrontEnd/{{value.wfeBss_img}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <p class="media-heading"><a ng-href="{{value.wfeBss_url}}">{{value.wfeBss_title}}</a></p>
+                    <div class="author">
+                        <img ng-src="images/{{value.wfeBss_author_img}}" class="img-circle">
+                        <span>{{value.wfeBss_author_name}}</span>
+                        <span>{{'发布时间:'+value.wfeBss_publictime}}</span>
+                        <span>{{'分类:'+value.wfeBss_sort}}</span>
+                    </div>
+                    <p class="mainPart">{{value.wfeBss_descript}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+﻿<div class="article col-md-8">
+    <div class="panel panel-default" ng-repeat="value in webPersonalList">
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a href="{{value.webP_url}}">
+                        <img class="media-object" ng-src="images/webTemplate/{{value.webP_img}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <p class="media-heading"><a ng-href="{{value.webP_url}}">{{value.webP_title}}</a></p>
+                    <div class="author">
+                        <img ng-src="images/{{value.webP_author_img}}" class="img-circle">
+                        <span>{{value.webP_author_name}}</span>
+                        <span>{{'发布时间:'+value.webP_publictime}}</span>
+                        <span>{{'分类:'+value.webP_sort}}</span>
+                    </div>
+                    <p class="mainPart">{{value.webP_descript}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

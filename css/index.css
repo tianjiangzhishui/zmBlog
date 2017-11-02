@@ -1,0 +1,589 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font: 16px "microsoft yahei", Arial, Helvetica, sans-serif;
+  color: #090225;
+  background-color: #EFEFEF;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.lf {
+  float: left;
+}
+.rt {
+  float: right;
+}
+.container {
+  padding: 0;
+}
+a {
+  color: #666;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+#header,
+#nav,
+#banner,
+#blogTemplate,
+.content,
+#footer {
+  width: 1000px;
+  margin: 0 auto;
+}
+.textColor {
+  color: #666;
+}
+@keyframes first {
+  0% {
+    padding-left: 200px;
+    opacity: .5;
+  }
+  100% {
+    padding-left: 0;
+    opacity: 1;
+  }
+}
+@keyframes second {
+  0% {
+    padding-left: 0;
+    opacity: .5;
+  }
+  100% {
+    padding-left: 200px;
+    opacity: 1;
+  }
+}
+@keyframes name {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#header {
+  background-color: #FAF9CC;
+  padding: 30px 0 20px;
+}
+#header .animate p:nth-child(1) {
+  animation: first 1s 1;
+}
+#header .animate p:nth-child(2) {
+  animation: second 1s 2 alternate;
+}
+#header .animate p:nth-child(3) > span {
+  animation: name 1s 3;
+}
+#header > div img {
+  margin: -80px 7px 0;
+}
+#header > div > div {
+  display: inline-block;
+  width: 539px;
+  height: 102px;
+  background: url(../images/logo-pic-bg.jpg) no-repeat 411px -8px;
+}
+#header > div > div p {
+  font-size: 16px;
+  margin-top: 7px;
+  width: 800px;
+}
+#header > div > div p:last-child {
+  padding-left: 261px;
+}
+#header > div > div p:last-child span {
+  color: red;
+}
+#nav {
+  margin-top: 10px;
+}
+#nav ul {
+  border-radius: 6px;
+  background-color: #65CBCD;
+}
+#nav ul li {
+  width: 142.85714286px;
+}
+#nav ul li a {
+  border-radius: 6px;
+  height: 50px;
+  line-height: 50px !important;
+  color: #fff;
+  padding: 0;
+  text-align: center;
+}
+#nav ul li a:hover {
+  background-color: #F05495;
+}
+#banner {
+  height: 300px;
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+}
+#banner ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#banner ul li {
+  width: 124px;
+  height: 60px;
+  line-height: 60px;
+  padding-left: 15px;
+}
+#banner ul li:hover {
+  background: url(../images/1.png);
+}
+#banner div.blackboard {
+  margin-top: 10px;
+  position: relative;
+}
+#banner div.blackboard p {
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  line-height: 30px;
+  top: 110px;
+  left: 124px;
+  color: #E7A6C1;
+}
+#blogTemplate [class^=col-md-],
+#blogTemplate .blogModal {
+  margin-top: 12px;
+}
+#blogTemplate span.label {
+  padding: 1em 1.6em 1em;
+  border-radius: 0.5em;
+  box-shadow: 5px 5px 5px #C6C6C6;
+}
+#blogTemplate div.blogModal {
+  box-shadow: 2px 2px 2px #ddd;
+}
+#blogTemplate div.blogModal:hover {
+  box-shadow: 0 0 3px #C6C6C6;
+}
+#blogTemplate div.blogModal p {
+  height: 58px;
+  font-size: 12px;
+  overflow: hidden;
+  color: #666;
+  line-height: 20px;
+}
+#blogTemplate div.blogModal h4 {
+  margin: 10px auto !important;
+}
+#blogTemplate div.blogModal a {
+  font-size: 13px;
+  margin: 10px 0 0 126px;
+}
+#blogTemplate div.blogModal a:hover {
+  color: #337ab7;
+}
+#blogTemplate table {
+  margin-top: 25px;
+}
+#blogTemplate table tr:hover {
+  background-color: #8FCFB7;
+}
+#blogTemplate table tr:hover a {
+  color: #fff;
+}
+.title,
+.content .article > h4 {
+  font-size: 16px;
+  text-align: left;
+  padding-left: 10px;
+  border-left: 2px solid #3472EF;
+  height: 28px;
+  line-height: 28px;
+  margin-bottom: 20px;
+}
+.bread {
+  margin-bottom: 20px;
+}
+.assortment {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.assortment li {
+  width: 180px;
+  height: 40px;
+  line-height: 28px;
+  color: #fff;
+  background: #878685;
+}
+.assortment li:hover {
+  background: #3884D2;
+  color: #fff;
+}
+div.panel {
+  position: relative;
+}
+.hot,
+.new {
+  position: absolute;
+  top: 10px;
+  left: -9px;
+  background-color: #DB4659;
+}
+.new {
+  background-color: #3475ef;
+}
+.flag {
+  width: 36px;
+  height: 26px;
+}
+.flag p {
+  text-align: center;
+  line-height: 26px;
+  color: #ffffff;
+  font-size: 13px;
+}
+.flag span {
+  border: 10px solid transparent;
+  display: block;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 15px;
+  left: -10px;
+}
+.flag span.hotTriangle {
+  border-right: 8px solid #DB4659;
+}
+.flag span.newTriangle {
+  border-right: 8px solid #3475ef;
+}
+.content .article div.panel:hover {
+  box-shadow: 2px 2px 2px #ddd;
+}
+.content .article div.panel-body div.media-left img {
+  height: 142px;
+}
+.content .article div.panel-body div.media-body .author {
+  margin: 10px 0;
+  font-size: 12px;
+  color: #929292;
+}
+.content .article div.panel-body div.media-body .mainPart {
+  height: 62px;
+  overflow: hidden;
+  color: #666;
+  font-size: 13px;
+  line-height: 22px;
+}
+.content .article .skills {
+  display: flex;
+  justify-content: space-between;
+}
+.content .article .skills td {
+  transition: padding .5s linear;
+}
+.content .article .skills td:hover {
+  padding-left: 60px;
+}
+.content .article .skills .ranking {
+  top: 50px;
+}
+.content .article .skills .hotRecommend {
+  width: 48%;
+}
+.messyContent .search {
+  height: 68px;
+  text-align: center;
+  padding: 16px 10px;
+}
+.messyContent .search input {
+  background: url(../images/magnifyingGlass.png) no-repeat 260px 9px;
+}
+.messyContent .aboutMe ul {
+  overflow: hidden;
+}
+.messyContent .aboutMe ul li {
+  float: left;
+  width: 42%;
+  height: 48px;
+  line-height: 48px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5%;
+}
+.messyContent .aboutMe ul li a {
+  color: #fff;
+  display: block;
+  height: 48px;
+  line-height: 48px;
+  border-radius: 5%;
+  transition: transform 1s linear;
+}
+.messyContent .aboutMe ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.6);
+  transform: rotate(360deg);
+}
+.messyContent .aboutMe ul li:nth-child(1) {
+  background-color: #666666;
+}
+.messyContent .aboutMe ul li:nth-child(2) {
+  background-color: #00CCCC;
+}
+.messyContent .aboutMe ul li:nth-child(3) {
+  background-color: #CC9966;
+}
+.messyContent .aboutMe ul li:nth-child(4) {
+  background-color: #6633CC;
+}
+.messyContent .attention {
+  padding-bottom: 20px;
+}
+.messyContent .attention table {
+  font-size: 12px;
+}
+.messyContent .attention table td {
+  height: 40px;
+  width: 18%;
+  line-height: 40px;
+  padding-left: 38px;
+}
+.messyContent .attention table td a {
+  display: block;
+  width: 114px;
+  height: 27px;
+  background: url(../images/communication.png) no-repeat -1px -1px;
+}
+.messyContent .attention table tr:nth-child(2) a {
+  width: 90px;
+  background: url(../images/communication.png) no-repeat -116px -1px;
+}
+.messyContent .attention table tr:nth-child(3) a {
+  background: url(../images/communication.png) no-repeat -208px -1px;
+}
+.messyContent .attention table tr:nth-child(4) a {
+  background: url(../images/attention.jpg) no-repeat;
+}
+.messyContent .hotRecommend {
+  position: relative;
+  padding-bottom: 8px;
+}
+.messyContent .hotRecommend .choose {
+  padding: 10px;
+}
+.messyContent .hotRecommend .choose li {
+  width: 32%;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+.messyContent .hotRecommend .rank td {
+  padding-left: 45px;
+}
+.messyContent .hotRecommend .ranking {
+  position: absolute;
+  top: 93px;
+  left: 10px;
+}
+.messyContent .hotRecommend .ranking li {
+  background: #929292;
+  width: 24px;
+  height: 24px;
+  font-size: 13px;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 20%;
+  margin: 7px 0 14px 0;
+}
+.messyContent .hotRecommend .ranking li:nth-child(1) {
+  background: #FF858E;
+}
+.messyContent .hotRecommend .ranking li:nth-child(2) {
+  background: #77D549;
+}
+.messyContent .hotRecommend .ranking li:nth-child(3) {
+  background: #62C1FF;
+}
+.messyContent .comment {
+  padding: 10px;
+  margin: 10px;
+}
+.messyContent .comment .commentItem {
+  background: #F2F6FD;
+  padding: 10px;
+  border-radius: 7%;
+}
+.messyContent .course ul {
+  color: #666;
+  font-size: 15px;
+  margin-left: 10px;
+}
+.messyContent .course ul li {
+  margin-bottom: 10px;
+}
+.messyContent .blogroll ul {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.messyContent .blogroll ul li {
+  float: left;
+  width: 50%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #666;
+}
+#footer {
+  height: 50px;
+  line-height: 50px;
+  background: #66CCCC;
+  border-radius: 5px;
+}
+#footer p {
+  text-align: center;
+  font-size: 13px;
+}
+.newRecommend {
+  margin-bottom: 15px;
+}
+.newRecommend img {
+  margin-left: 21px;
+}
+.newRecommend table {
+  margin-bottom: 0;
+}
+.newRecommend ul.ranking {
+  top: 2px !important;
+}
+.buildBlog {
+  padding: 18px;
+}
+.buildBlog h4 {
+  color: #FE4455;
+  margin-bottom: 8px;
+  text-align: center;
+}
+.buildBlog p,
+.buildBlog span {
+  color: #666;
+  font-size: 15px;
+  line-height: 20px;
+}
+.buildBlog span {
+  margin-left: 45px;
+}
+.buildBlog span > a {
+  color: #E77D4C;
+}
+.buildBlog span > a:hover {
+  text-decoration: underline;
+}
+.mySelf {
+  margin: 16px !important;
+}
+.webTemplet {
+  margin-top: 20px;
+}
+.write {
+  position: relative;
+}
+.write .panel {
+  min-height: 80px;
+  padding: 10px 10px 25px;
+}
+.write span {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #EE5B5B;
+  color: #fff;
+  height: 26px;
+  line-height: 16px;
+  padding: 5px;
+  font-size: 10px;
+}
+.flash {
+  margin: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.flash .collapseComponent {
+  margin-top: 32px;
+}
+.flash p {
+  height: 40px;
+  line-height: 40px;
+  width: 200px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #CC9A67;
+  color: #ffffff;
+  border-radius: 6px;
+  padding-left: 15px;
+}
+.flash p:hover {
+  background: #e6cdb3;
+}
+.flash ul {
+  padding-left: 20px;
+  margin: 10px 0;
+  color: #595959;
+  font-size: 15px;
+}
+.flash ul li:hover {
+  color: #ddd;
+}
+.flash .videoComponent b {
+  color: #838181;
+}
+.flash .videoComponent span {
+  color: #333;
+}
+.flash video {
+  width: 750px;
+  height: 436px;
+  background: #ddd;
+  margin-top: 10px;
+}
+.bottom-margin {
+  margin-bottom: 20px;
+}
+.top-padding {
+  padding-top: 20px;
+}
+.modalOutermost {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(160, 160, 160, 0.5);
+}
+.modalInside {
+  width: 600px;
+  margin: 5% auto;
+  border: 1px solid #3BC5FF;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+}
+#modalNav .activeClick {
+  border: 1px solid #ddd;
+  border-bottom: 1px solid transparent;
+  background: #fff;
+}

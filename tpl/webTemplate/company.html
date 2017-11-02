@@ -1,0 +1,23 @@
+<div class="article col-md-8">
+    <div class="panel panel-default" ng-repeat="value in companyList">
+        <div class="panel-body">
+            <div class="media">
+                <div class="media-left">
+                    <a ng-href="{{value.seoProb_url}}">
+                        <img class="media-object" ng-src="images/webTemplate/{{value.seoProb_img}}">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <p class="media-heading"><a ng-href="{{value.seoProb_url}}">{{value.seoProb_title}}</a></p>
+                    <div class="author">
+                        <img ng-src="images/{{value.seoProb_author_img}}" class="img-circle">
+                        <span>{{value.seoProb_author_name}}</span>
+                        <span>{{'发布时间:'+value.seoProb_publictime}}</span>
+                        <span>{{'分类:'+value.seoProb_sort}}</span>
+                    </div>
+                    <p class="mainPart">{{value.seoProb_descript}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

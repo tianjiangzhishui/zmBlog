@@ -1,0 +1,23 @@
+<div ng-include="'tpl/include/top.html'"></div>
+<div class="container content webTemplet" ng-controller="studinessCtrl">
+    <p class="bread">
+        <a href="#/main">首页</a>&nbsp;>&nbsp;学无止境&nbsp;>&nbsp;
+        <!--<span ng-if="">程序人生</span>-->
+        <!--<span ng-if="">网络营销</span>-->
+    </p>
+    <ul class="assortment">
+        <li class="btn" ng-click="jump('seo')">SEO优化</li>
+        <li class="btn" ng-click="jump('webFrontEnd')">Web前端</li>
+        <li class="btn" ng-click="toCoder()">程序人生</li>
+        <li class="btn" ng-click="toNetWorkMarketing()">网络营销</li>
+    </ul>
+    <div class="row">
+        <div class="article col-md-8">
+            <ui-view></ui-view>
+        </div>
+        <div class="col-md-4">
+            <div ng-include="'tpl/include/webSearch.html'"></div>
+        </div>
+    </div>
+</div>
+<footer ng-include="'tpl/include/footer.html'"></footer>

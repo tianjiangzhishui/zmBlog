@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="zh-cn">
+    <meta charset="UTF-8">
+    <!--2 viewport-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <!--3、x-ua-compatible-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <title></title>
+    <!--4、引入两个兼容文件-->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+
+  <![endif]-->
+    <!--6、引入 bootstrap.css-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+
+    </style>
+</head>
+<body ng-controller="myCtro">
+
+<!--将多选框的勾选数据给model -->
+ 复选框：<input type="checkbox" ng-model="isAgree"/>
+ <br>
+
+<!--将选择框的model数据给ng-model-->
+<!--ng-options 动态生成选项  -->
+<select ng-model="sel2" ng-options="sel2.name for sel2 in selection"></select>
+<p>{{sel2.name}}</p>
+<script src="js/angular.js"></script>
+<script>
+        var app=angular.module('myApp',['ng']);
+
+       app.controller('myCtro',function($scope){
+                //$watch可以监听view数据是否改变，便于观察现象
+                $scope.$watch('isAgree',function(){
+                        console.log($scope.isAgree);
+                    });
+                 $scope.$watch('sel',function(){
+                        console.log($scope.sel);
+                     });
+
+                 $scope.selection=[
+                         {name:'model',value:5},
+                         {name:'modren',value:4},
+                        {name:'moon',value:1},
+               {name:'morning',value:3}
+                     ];
+           //为select标签设置一个selected    选项
+                $scope.sel2=$scope.selection[1];
+           $scope.$watch('sel2',function() {
+                       console.log($scope.sel2.value);
+                  })
+            })
+     </script>
+</body>
+</html>

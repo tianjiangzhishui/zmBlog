@@ -1,0 +1,23 @@
+<div ng-include="'tpl/include/top.html'"></div>
+<div class="container content webTemplet" ng-controller="seoCtrl">
+    <p class="bread">
+        <a href="#/main">首页</a>&nbsp;>&nbsp;<a href="#/study">学无止境</a>&nbsp;>&nbsp;SEO优化
+        <!--<span ng-if="">SEO常见问题</span>-->
+        <!--<span ng-if="">SEO基础优化</span>-->
+        <!--<span ng-if="">SEO优化进阶</span>-->
+        <!--<span ng-if="">SEO实战案例</span>-->
+    </p>
+    <ul class="assortment">
+        <li class="btn" ng-click="toSeoProblem()">SEO常见问题</li>
+        <li class="btn" ng-click="toSeoBasis()">SEO基础优化</li>
+        <li class="btn" ng-click="toSeoOptimize()">SEO优化进阶</li>
+        <li class="btn" ng-click="toSeoProject()">SEO实战案例</li>
+    </ul>
+    <div class="row">
+        <ui-view></ui-view>
+        <div class="col-md-4">
+            <div ng-include="'tpl/include/webSearch.html'"></div>
+        </div>
+    </div>
+</div>
+<footer ng-include="'tpl/include/footer.html'"></footer>

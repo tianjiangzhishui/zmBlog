@@ -1,0 +1,684 @@
+//@base:#f938ab;
+//.box-shadow(@style,@c) when (iscolor(@c)){
+//  -webkit-box-shadow:@style @c;
+//  box-shadow:@style @c;
+//}
+//.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+//  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+//}
+//.box {
+//  color: saturate(@base, 5%);
+//  border-color: lighten(@base, 30%);
+//  div { .box-shadow(0 0 5px, 30%) }
+//}
+//变量
+
+@fontSize:10px;
+@navBackgroundColor:#65CBCD;
+@navBackgroundColorHover:#F05495;
+@totalWidth:1000px;
+@hotColor:#DB4659;
+@newColor:#3475ef;
+@boxShadowColor:#C6C6C6;
+*{
+  box-sizing:border-box;
+}
+body{
+  font:16px "microsoft yahei",Arial,Helvetica,sans-serif;
+  color:#090225;
+  background-color:#EFEFEF;
+}
+body,h1,h2,h3,h4,h5,h6,p,ul,ol,dl,dd{
+  margin:0;
+  padding: 0;
+  list-style:none;
+}
+.lf{float:left;}
+.rt{float:right;}
+.container{
+  padding:0;
+}
+a{
+  color:#666;
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:none;
+}
+#header,#nav,#banner,#blogTemplate,.content,#footer{
+  width:@totalWidth;
+  margin:0 auto;
+}
+.textColor{
+  color:#666;
+}
+//.row{
+//  margin:0 !important;
+//}
+
+//头部动画
+//第一句
+@keyframes first {
+  0%{
+    padding-left:200px;
+    opacity: .5;
+  }
+  100%{
+    padding-left:0;
+    opacity:1;
+  }
+}
+//第二句
+@keyframes second {
+  0%{
+    padding-left:0;
+    opacity: .5;
+  }
+  100%{
+    padding-left:200px;
+    opacity:1;
+  }
+}
+//名字
+@keyframes name {
+  0%{
+    opacity:0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+//其他页面的内容部分动画
+
+#header{
+  background-color:#FAF9CC;
+  padding:30px 0 20px;
+  //引入动画
+  .animate{
+    p:nth-child(1){
+      animation: first 1s 1;
+    }
+    p:nth-child(2){
+      animation: second 1s 2 alternate;
+    }
+    p:nth-child(3)>span{
+      animation: name 1s 3;
+    }
+  }
+
+  >div{
+    img{
+      margin:-80px 7px 0;
+    }
+    >div{
+      display:inline-block;
+      width:539px;
+      height:102px;
+      background:url(../images/logo-pic-bg.jpg) no-repeat 411px -8px;
+      p{
+        font-size:@fontSize*1.6;
+        margin-top:7px;
+        width:800px;
+      }
+      p:last-child{
+        padding-left:261px;
+        span{
+          color:red;
+        }
+      }
+    }
+  }
+}
+
+#nav{
+  margin-top:10px;
+  ul{
+    border-radius:6px;
+    background-color:@navBackgroundColor;
+    li{
+      width:@totalWidth/7;
+      a{
+        border-radius:6px;
+        height:50px;
+        line-height: 50px !important;
+        color:#fff;
+        padding:0;
+        text-align:center;
+        &:hover{
+          background-color:@navBackgroundColorHover;
+        }
+      }
+    }
+}
+}
+
+#banner{
+  height:300px;
+  //line-height:px;
+  margin:10px auto;
+  display:flex;
+  justify-content: space-between;
+  ul{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    li{
+      width:124px;
+      height:60px;
+      line-height: 60px;
+      padding-left:15px;
+      &:hover{
+        background:url(../images/1.png);
+      }
+    }
+  }
+  div.blackboard{
+    margin-top:10px;
+    position:relative;
+    p{
+      width:200px;
+      height:100px;
+      position:absolute;
+      line-height: 30px;
+      top:110px;
+      left:124px;
+      color:#E7A6C1;
+    }
+  }
+}
+//个人博客
+#blogTemplate{
+  [class^=col-md-],.blogModal{
+    margin-top:12px;
+  }
+  span.label{
+    padding: 1em 1.6em 1em;
+    border-radius:0.5em;
+    box-shadow:5px 5px 5px @boxShadowColor ;
+  }
+  div.blogModal{
+    box-shadow:2px 2px 2px #ddd;
+    &:hover{
+      box-shadow:0 0 3px @boxShadowColor;
+    }
+    p{
+      height:58px;
+      font-size:@fontSize*1.2;
+      overflow: hidden;
+      color:#666;
+      line-height:20px;
+    }
+    h4{
+      margin:10px auto !important;
+    }
+    a{
+      font-size:@fontSize*1.3;
+      margin:10px 0 0 126px;
+      &:hover{
+        color:#337ab7;
+      }
+    }
+  }
+  table{
+    margin-top:25px;
+    tr:hover{
+      background-color:#8FCFB7;
+      a{
+        color:#fff;
+      }
+    }
+  }
+}
+//文章推荐等文字样式
+.title{
+  font-size:@fontSize*1.6;
+  text-align: left;
+  padding-left:10px;
+  border-left:2px solid #3472EF;
+  height:28px;
+  line-height:28px;
+  margin-bottom:20px;
+}
+//面包屑导航的下边距
+.bread{
+  margin-bottom:20px;
+}
+//导航下面三个按钮的样式
+.assortment{
+  display:flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  li{
+    width:180px;
+    height: 40px;
+    line-height: 28px;
+    color:#fff;
+    background:#878685;
+    &:hover{
+      background:#3884D2;
+      color:#fff;
+    }
+  }
+}
+//热和新的样式
+//  1.父元素定位
+div.panel{
+  position:relative;
+}
+.hot{
+  position:absolute;
+  top:10px;
+  left:-9px;
+  background-color:@hotColor;
+ }
+.new{
+  &:extend(.hot);
+  background-color:@newColor;
+}
+//公共样式
+.flag{
+    width:36px;
+    height:26px;
+    p{
+      text-align:center;
+      line-height: 26px;
+      color: #ffffff;
+      font-size:@fontSize*1.3;
+    }
+  span{
+    border:10px solid transparent;
+    display:block;
+    width:16px;
+    height:16px;
+    position:absolute;
+    top:15px;
+    left:-10px;
+  }
+  //三角形样式
+  span.hotTriangle{
+    border-right:8px solid @hotColor;
+  }
+  span.newTriangle{
+    border-right:8px solid @newColor;
+  }
+}
+
+//文章推荐
+.content{
+  .article{
+    >h4{
+      &:extend(.title);
+    }
+    div.panel{
+      &:hover{
+        box-shadow:2px 2px 2px #ddd;
+      }
+    }
+    div.panel-body{
+      div.media-left{
+        img{
+          height:142px;
+        }
+      }
+      div.media-body{
+        .author{
+          margin:10px 0;
+          font-size:@fontSize*1.2;
+          color:#929292;
+        }
+        .mainPart{
+          height:62px;
+          overflow:hidden;
+          color:#666;
+          font-size:@fontSize*1.3;
+          line-height:22px;
+        }
+      }
+    }
+    //下边两个表格数字定位
+    .skills{
+      td{
+        transition:padding .5s linear;
+        &:hover{
+          padding-left:60px;
+        }
+      }
+      display:flex;
+      justify-content: space-between;
+      .ranking{
+        top:50px;
+      }
+      .hotRecommend{
+        width:48%;
+      }
+    }
+  }
+}
+
+
+//站内搜索
+.messyContent{
+  //搜索
+  .search{
+    height:68px;
+    text-align: center;
+    padding:16px 10px;
+    input{
+      background:url(../images/magnifyingGlass.png) no-repeat 260px 9px;
+    }
+  }
+  //关于我右侧所部分
+  .aboutMe{
+    ul{
+      //清除li浮动的影响
+      overflow:hidden;
+    }
+    ul li{
+      float:left;
+      width:42%;
+      height:48px;
+      line-height: 48px;
+      margin:10px;
+      text-align: center;
+      border-radius:5%;
+      a {
+        color:#fff;
+        display: block;
+        height: 48px;
+        line-height: 48px;
+        border-radius:5%;
+        transition:transform 1s linear;
+        &:hover{
+          background-color: rgba(255, 255, 255,0.6);
+          transform:rotate(360deg);
+        }
+      }
+    }
+    ul li:nth-child(1){
+      background-color:#666666;
+    }
+    ul li:nth-child(2){
+      background-color:#00CCCC;
+    }
+    ul li:nth-child(3){
+      background-color:#CC9966;
+    }
+    ul li:nth-child(4){
+      background-color:#6633CC;
+    }
+  }
+//关注博客
+  .attention{
+    padding-bottom:20px;
+    table{
+      font-size:@fontSize*1.2;
+      td{
+        height:40px;
+        width:18%;
+        line-height: 40px;
+        padding-left: 38px;
+        a{
+          display:block;
+          width:114px;
+          height:27px;
+          background:url(../images/communication.png) no-repeat -1px -1px;
+        }
+      }
+      tr:nth-child(2){
+        a{
+          width:90px;
+          background: url(../images/communication.png) no-repeat -116px -1px;
+        }
+      }
+      tr:nth-child(3){
+        a{
+          background: url(../images/communication.png) no-repeat -208px -1px;
+        }
+      }
+      tr:nth-child(4){
+        a{
+          background: url(../images/attention.jpg) no-repeat;
+        }
+      }
+    }
+  }
+//热门推荐
+  .hotRecommend{
+    position:relative;
+    padding-bottom:8px;
+    .choose {
+      padding:10px;
+      li{
+        width:32%;
+        border-bottom:1px solid #ddd;
+        text-align:center;
+      }
+    }
+    .rank{
+      td{
+        padding-left:45px;
+      }
+    }
+    .ranking{
+      position:absolute;
+      top:93px;
+      left:10px;
+      li{
+        background:#929292;
+        width:24px;
+        height:24px;
+        font-size:@fontSize*1.3;
+        color:#fff;
+        line-height: 24px;
+        text-align:center;
+        border-radius:20%;
+        margin:7px 0 14px 0;
+      }
+      li:nth-child(1){
+        background:#FF858E;
+      }
+      li:nth-child(2){
+        background:#77D549;
+      }
+      li:nth-child(3){
+        background:#62C1FF;
+      }
+    }
+  }
+  //评论
+  .comment{
+    padding:10px;
+    margin:10px;
+    .commentItem{
+      background:#F2F6FD;
+      padding:10px;
+      border-radius:7%;
+    }
+  }
+  //一路走来
+  .course{
+    ul{
+      color:#666;
+      font-size:@fontSize*1.5;
+      margin-left:10px;
+      li{
+        margin-bottom:10px;
+      }
+    }
+  }
+//友情链接
+  .blogroll{
+    ul{
+      overflow: hidden;
+      margin-bottom:10px;
+      li{
+        float:left;
+        width:50%;
+        height:30px;
+        text-align:center;
+        line-height: 30px;
+        color:#666;
+      }
+    }
+  }
+}
+
+#footer{
+  height:50px;
+  line-height: 50px;
+  background: #66CCCC;
+  border-radius:5px;
+  p{
+    text-align:center;
+    font-size:@fontSize*1.3;
+  }
+}
+
+//aboutMe等页面右侧搜索 按钮 最新推荐的样式
+  //最新推荐
+.newRecommend{
+  margin-bottom:15px;
+  img{
+    margin-left:21px;
+  }
+  table{
+    margin-bottom:0;
+  }
+  ul.ranking{
+    top:2px !important;
+  }
+}
+  //建立独立博客
+.buildBlog{
+  padding:18px;
+  h4{
+    color:#FE4455;
+    margin-bottom:8px;
+    text-align:center;
+  }
+  p,span{
+    color:#666;
+    font-size: @fontSize*1.5;
+    line-height: 20px;
+  }
+  span{
+    margin-left:45px;
+  }
+  span>a{
+    color:#E77D4C;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+  //左侧面板
+.mySelf{
+  margin:16px !important;
+}
+
+//留言板message 没写
+.message{
+
+}
+
+//webTemplet 网站模板样式
+.webTemplet{
+  margin-top:20px;
+}
+
+//write 日记区域
+.write{
+  position:relative;
+  .panel{
+    min-height:80px;
+    padding:10px 10px 25px;
+  }
+  span{
+    position:absolute;
+    bottom: 10px;
+    right:10px;
+    background:#EE5B5B;
+    color:#fff;
+    height:26px;
+    line-height: 16px;
+    padding:5px;
+    font-size:@fontSize;
+  }
+}
+
+//flash视频教程
+.flash{
+  margin:10px;
+  display:flex;
+  justify-content: space-between;
+  .collapseComponent{
+    margin-top:32px;
+  }
+  p{
+    height:40px;
+    line-height: 40px;
+    width:200px;
+    font-size:@fontSize*1.6;
+    font-weight: bold;
+    background:#CC9A67;
+    color: #ffffff;
+    border-radius:6px;
+    padding-left:15px;
+    &:hover{
+      background:lighten(#CC9A67,20%);
+    }
+  }
+  ul{
+    padding-left:20px;
+    margin:10px 0;
+    color:#595959;
+    font-size: @fontSize*1.5;
+    li:hover{
+      color:#ddd;
+    }
+  }
+  .videoComponent{
+    b{
+      color:#838181;
+    }
+    span{
+      color:#333;
+    }
+  }
+  video{
+    width:750px;
+    height:436px;
+    background:#ddd;
+    margin-top:10px;
+  }
+}
+.bottom-margin{
+  margin-bottom:20px;
+}
+.top-padding{
+  padding-top:20px;
+}
+
+ //留言板登录页面的模态框
+.modalOutermost{  //灰色遮罩层
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(160,160,160,.5);
+}
+.modalInside{
+  width:600px;
+  margin:5% auto;
+  border:1px solid #3BC5FF;
+  background:#fff;
+  border-radius:10px;
+  padding:12px;
+}
+#modalNav .activeClick{
+  border:1px solid #ddd;
+  border-bottom:1px solid transparent;
+  background:#fff;
+}

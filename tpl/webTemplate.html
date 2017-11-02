@@ -1,0 +1,19 @@
+<!--网站模板 左侧部分 加上 引用右侧部分-->
+<div ng-include="'tpl/include/top.html'"></div>
+    <div class="container content webTemplet" ng-controller="webTemplateCtrl">
+        <p class="bread">
+            <a href="#/main">首页</a>&nbsp;>&nbsp;网站模板
+        </p>
+        <ul class="assortment">
+            <li class="btn" ng-click="toWebPersonal()">个人博客模板</li>
+            <li class="btn" ng-click="toWordPress()">Wordpress博客模板</li>
+            <li class="btn" ng-click="toCompany()">企业网站模板</li>
+        </ul>
+        <div class="row">
+            <ui-view></ui-view>
+            <div class="col-md-4">
+                <div ng-include="'tpl/include/webSearch.html'"></div>
+            </div>
+        </div>
+    </div>
+<footer ng-include="'tpl/include/footer.html'"></footer>

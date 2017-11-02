@@ -1,0 +1,144 @@
+<div ng-include="'tpl/include/top.html'"></div>
+<div class="container content webTemplet" ng-controller="messageCtrl">
+    <p class="bread">
+        <a href="#/main">首页</a>&nbsp;>&nbsp;留言板
+    </p>
+    <div class="row">
+        <div class="article col-md-8">
+            <form class="form-horizontal">
+                <div class="form-group message">
+                    <div class="col-sm-12">
+                        <textarea class="form-control" rows="5" placeholder="说点什么吧..." ng-model="message"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-10 col-md-2">
+                        <button id="sendMessage" class="btn btn-success" ng-click="sendMessage()">发表留言</button>
+                    </div>
+                </div>
+            </form>
+            <!--留言内容-->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <!--<img class="media-object" src="images/1-1406052123280-L.jpg">-->
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <p><span>{{msgNickname+'说:'}}</span><span>{{data.msg_time}}</span></p>
+                            <p>{{data.msg_content}}</p>
+                            <p><a>{{'赞'+(data.msg_zan)}}</a><a>{{'踩('+data.msg_cai+')'}}</a><a>{{'回复('+data.msg_replay+')'}}</a></p>
+                        </div>
+                    </div>
+                    <!--点击回复，就在当前panel-body中添加一个panel-->
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <img class="media-object" src="images/1-1406052123280-L.jpg">
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    <p><span>昵称说:</span><span>留言时间</span></p>
+                                    <p>留言内容</p>
+                                    <p><span>赞(1)</span><span>踩(1)</span><span>回复</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div ng-include="'tpl/include/webSearch.html'"></div>
+        </div>
+    </div>
+
+    <!--模态框-->
+    <div class="modalOutermost" ng-show="isModalShow">
+        <div class="modalInside">
+            <!--导航-->
+            <div>
+                <ul class="nav nav-tabs" id="modalNav">
+                    <li><a ng-click="activeLi('login')" class="activeClick">登录</a></li>
+                    <li><a ng-click="activeLi('register')" class="">注册</a></li>
+                </ul>
+            </div>
+            <!--登录-->
+            <div class="top-padding">
+                <ui-view></ui-view>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<footer ng-include="'tpl/include/footer.html'"></footer>
+
+
+<!--注册-->
+<!--<form id="register" class="form-horizontal">
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label"><span>*</span>昵称</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="nickname" placeholder="nickname">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="e-mail" class="col-sm-2 control-label"><span>*</span>邮箱</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="e-mail" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="pwd" class="col-sm-2 control-label"><span>*</span>密码</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="pwd" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="addr" class="col-sm-2 control-label">我的网址</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="addr" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 记住我
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success btn-block">注册</button>
+        </div>
+    </div>
+</form>-->
+<!--登录-->
+<!--<form id="login.html" class="form-horizontal">
+    <div class="form-group">
+        <label for="nickname" class="col-sm-2 control-label">邮箱</label>
+        <div class="col-sm-10">
+            <input type="email" class="form-control" id="nickname" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="pwd" class="col-sm-2 control-label">密码</label>
+        <div class="col-sm-10">
+            <input type="password" class="form-control" id="pwd" placeholder="Password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success btn-block">登录</button>
+        </div>
+    </div>
+</form>-->
+
+

@@ -1,0 +1,23 @@
+<div ng-include="'tpl/include/top.html'"></div>
+<div class="container content webTemplet" ng-controller="webCtrl">
+    <p class="bread">
+        <a href="#/main">首页</a>&nbsp;>&nbsp;<a href="#/study">学无止境</a>&nbsp;>&nbsp;Web前端
+        <!--<span ng-if="">网页制作基础</span>-->
+        <!--<span ng-if="">HTML/CSS3</span>-->
+        <!--<span ng-if="">javascript/jQuery</span>-->
+        <!--<span ng-if="">网站实战案例</span>-->
+    </p>
+    <ul class="assortment">
+        <li class="btn" ng-click="toWebFrontEndBasis()">网页制作基础</li>
+        <li class="btn" ng-click="toWebFrontEndHC()">HTML/CSS3</li>
+        <li class="btn" ng-click="toWebFrontEndJS()">javascript/jQuery</li>
+        <li class="btn" ng-click="toWebFrontEndProject()">网站实战案例</li>
+    </ul>
+    <div class="row">
+        <ui-view></ui-view>
+        <div class="col-md-4">
+            <div ng-include="'tpl/include/webSearch.html'"></div>
+        </div>
+    </div>
+</div>
+<footer ng-include="'tpl/include/footer.html'"></footer>
